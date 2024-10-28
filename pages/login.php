@@ -87,7 +87,7 @@
              <img src="../assets/img/medicina/logo.jpg" alt="Descripción de la imagen" width="300" height="200">
             </div>
               <div class="card-body">
-              <form id="loginForm" method="POST" action="config/handle_login.php">
+              <form id="loginForm" method="POST" action="../config/handle_login.php">
                   
                   <div class="input-group input-group-outline mb-3">
                   <label class="form-label">Email</label>
@@ -156,5 +156,4 @@
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/material-dashboard.min.js?v=3.2.0"></script>
 </body>
-
 </html>
