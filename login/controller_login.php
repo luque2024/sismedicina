@@ -1,50 +1,86 @@
-<?php
-session_start(); // Iniciar sesión para manejar la sesión del usuario
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <?php
+    session_start(); // Iniciar sesión para manejar la sesión del usuario
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Conexión a la base de datos
-    $conn = new mysqli('localhost', 'root', '', 'sismedicina');
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Verifica la conexión
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
-    }
+        // Conexión a la base de datos
+        $conn = new mysqli('localhost', 'root', '', 'sismedicina');
 
-    // Recibir datos del formulario
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    // Prepara la consulta para obtener el usuario
-    $stmt = $conn->prepare("SELECT id, nombre, password FROM usuarios WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    // Verifica si el usuario existe
-    if ($result->num_rows === 1) {
-        $usuario = $result->fetch_assoc();
-        
-        // Verifica la contraseña
-        if (password_verify($password, $usuario['password'])) {
-            // Almacena información en la sesión
-            $_SESSION['user_id'] = $usuario['id'];
-            $_SESSION['user_nombre'] = $usuario['nombre'];
-      
-
-            // Redirigir a la página de inicio o dashboard
-            header("Location: ../layout/parte1.php"); // Cambia esto a la ruta deseada
-            exit();
-        } else {
-            echo "Contraseña incorrecta.";
+        // Verifica la conexión
+        if ($conn->connect_error) {
+            die("Conexión fallida: " . $conn->connect_error);
         }
-    } else {
-        echo "Usuario no encontrado.";
-    }
 
-    // Cierra la conexión
-    $stmt->close();
-    $conn->close();
-} else {
-    echo "Método de solicitud no permitido.";
-}
-?>
+        // Recibir datos del formulario
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        // Prepara la consulta para obtener el usuario
+        $stmt = $conn->prepare("SELECT id, nombre, password FROM usuarios WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        // Verifica si el usuario existe
+        if ($result->num_rows === 1) {
+            $usuario = $result->fetch_assoc();
+
+            // Verifica la contraseña
+            if (password_verify($password, $usuario['password'])) {
+                // Almacena información en la sesión
+                $_SESSION['user_id'] = $usuario['id'];
+                $_SESSION['user_nombre'] = $usuario['nombre'];
+
+                // Alerta de bienvenida y redirección
+                echo "<script>
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Bienvenido al sistema',
+                        text: 'Has iniciado sesión correctamente!',
+                        showConfirmButton: false,
+                        timer: 2000
+                    }).then(() => {
+                        window.location.href = '../layout/parte1.php';
+                    });
+                </script>";
+                exit();
+            } else {
+                // Contraseña incorrecta
+                echo "<script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Contraseña incorrecta',
+                        text: 'Por favor, verifica tu contraseña.',
+                        confirmButtonText: 'Inténtalo de nuevo'
+                    }).then(() => {
+                        window.location.href = 'index.php';
+                    });
+                </script>";
+            }
+        } else {
+            // Usuario no encontrado
+            echo "<script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Usuario no encontrado',
+                    text: 'El email ingresado no está registrado.',
+                    confirmButtonText: 'Regresar'
+                }).then(() => {
+                    window.location.href = 'index.php';
+                });
+            </script>";
+        }
+
+        // Cierra la conexión
+        $stmt->close();
+        $conn->close();
+    } else {
+        echo "Método de solicitud no permitido.";
+    }
+    ?>
+</body>
+
