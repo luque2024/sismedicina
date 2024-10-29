@@ -1,6 +1,12 @@
 <head>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+<style>
+    .custom-font {
+    font-family: 'Arial', sans-serif; /* Cambia 'Arial' por la fuente que prefieras */
+}
+
+    </style>
 <body>
     <?php
     session_start(); // Iniciar sesión para manejar la sesión del usuario
@@ -37,42 +43,54 @@
 
                 // Alerta de bienvenida y redirección
                 echo "<script>
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Bienvenido al sistema',
-                        text: 'Has iniciado sesión correctamente!',
-                        showConfirmButton: false,
-                        timer: 2000
-                    }).then(() => {
-                        window.location.href = '../layout/parte1.php';
-                    });
-                </script>";
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Bienvenido al sistema',
+                    text: 'Has iniciado sesión correctamente!',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    customClass: {
+                        title: 'custom-font', // Aplica la clase a la etiqueta del título
+                        text: 'custom-font'    // Aplica la clase al texto
+                    }
+                }).then(() => {
+                    window.location.href = '../layout/parte1.php';
+                });
+            </script>";
                 exit();
             } else {
                 // Contraseña incorrecta
                 echo "<script>
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Contraseña incorrecta',
-                        text: 'Por favor, verifica tu contraseña.',
-                        confirmButtonText: 'Inténtalo de nuevo'
-                    }).then(() => {
-                        window.location.href = 'index.php';
-                    });
-                </script>";
-            }
-        } else {
-            // Usuario no encontrado
-            echo "<script>
                 Swal.fire({
                     icon: 'error',
-                    title: 'Usuario no encontrado',
-                    text: 'El email ingresado no está registrado.',
-                    confirmButtonText: 'Regresar'
+                    title: 'Contraseña incorrecta',
+                    text: 'Por favor, verifica tu contraseña.',
+                    confirmButtonText: 'Inténtalo de nuevo',
+                    customClass: {
+                        title: 'custom-font', // Aplica la clase al título
+                        content: 'custom-font' // Aplica la clase al texto del contenido
+                    }
                 }).then(() => {
                     window.location.href = 'index.php';
                 });
             </script>";
+            }
+        } else {
+            // Usuario no encontrado
+            echo "<script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Usuario no encontrado',
+                text: 'El email ingresado no está registrado.',
+                confirmButtonText: 'Regresar',
+                customClass: {
+                    title: 'custom-font', // Aplica la clase al título
+                    content: 'custom-font' // Aplica la clase al texto del contenido
+                }
+            }).then(() => {
+                window.location.href = 'index.php';
+            });
+        </script>";
         }
 
         // Cierra la conexión
@@ -83,4 +101,3 @@
     }
     ?>
 </body>
-
