@@ -40,7 +40,6 @@
                 // Almacena información en la sesión
                 $_SESSION['user_id'] = $usuario['id'];
                 $_SESSION['user_nombre'] = $usuario['nombre'];
-
                 // Alerta de bienvenida y redirección
                 echo "<script>
                 Swal.fire({

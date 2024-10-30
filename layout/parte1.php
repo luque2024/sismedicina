@@ -1,6 +1,17 @@
 <?php
 include ('../app/config.php');
 ?>
+
+<?php
+session_start(); // Iniciar la sesión
+
+// Verifica si el usuario ha iniciado sesión
+if (!isset($_SESSION['user_id'])) {
+  // Redirige al usuario a la página de inicio de sesión sin mostrar SweetAlert
+  header("Location: ../login/index.php");
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,6 +37,13 @@ include ('../app/config.php');
   <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.2.0" rel="stylesheet" />
   
 </head>
+<style>
+.full-width {
+    display: block; /* Hace que el enlace se comporte como un bloque */
+    width: 100%;   /* Asegura que ocupe el 100% del contenedor */
+    text-align: center; /* Centra el texto dentro del enlace */
+}
+</style>
 
 <body class="g-sidenav-show  bg-gray-100">
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2  bg-white my-2" id="sidenav-main">
@@ -42,12 +60,13 @@ include ('../app/config.php');
       <li class="nav-item">
       <a class="nav-link active text-white" style="background-color: #001f3f;" data-bs-toggle="collapse" href="#dashboardMenu1" role="button" aria-expanded="false" aria-controls="dashboardMenu1">
 
-    <i class="material-symbols-rounded opacity-5">dashboard1</i>
-    <span class="nav-link-text ms-1">Dashboard1</span>
+    <i class="material-symbols-rounded opacity-5">1</i>
+    <span class="nav-link-text ms-1">Roles</span>
   </a>
   <div class="collapse" id="dashboardMenu1">
     <ul class="nav ms-4">
-      <li><a href="../pages/dashboard-overview.html" class="nav-link">Overview</a></li>
+    <li class="red-block"><a href="../pages/dashboard-overview.html" class="nav-link">Overview</a></li>
+
       <li><a href="../pages/dashboard-analytics.html" class="nav-link">Analytics</a></li>
       <li><a href="../pages/dashboard-reports.html" class="nav-link">Reports</a></li>
     </ul>
@@ -62,7 +81,27 @@ include ('../app/config.php');
   </a>
   <div class="collapse" id="dashboardMenu2">
     <ul class="nav ms-4">
-      <li><a href="../pages/dashboard-overview.html" class="nav-link">Overview</a></li>
+    <ul class="nav">
+  <li>
+    <a href="../pages/dashboard-overview.html" class="nav-link active text-primary font-weight-bold">Overview</a>
+</li>
+</ul>
+
+<style>
+.custom-nav-link {
+  color: #007bff; /* Color del texto */
+  text-decoration: none; /* Quitar subrayado */
+  padding: 10px 15px; /* Espaciado interno */
+  border-radius: 4px; /* Bordes redondeados */
+  transition: background-color 0.3s, color 0.3s; /* Efecto de transición */
+}
+
+.custom-nav-link:hover {
+  background-color: #e9ecef; /* Color de fondo al pasar el mouse */
+  color: #0056b3; /* Color del texto al pasar el mouse */
+}
+</style>
+
       <li><a href="../pages/dashboard-analytics.html" class="nav-link">Analytics</a></li>
       <li><a href="../pages/dashboard-reports.html" class="nav-link">Reports</a></li>
     </ul>
@@ -156,12 +195,7 @@ include ('../app/config.php');
             <span class="nav-link-text ms-1">Profile</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark" href="../pages/sign-in.html">
-            <i class="material-symbols-rounded opacity-5">login</i>
-            <span class="nav-link-text ms-1">Sign In</span>
-          </a>
-        </li>
+      
         <li class="nav-item">
           <a class="nav-link text-dark" href="../pages/sign-up.html">
             <i class="material-symbols-rounded opacity-5">assignment</i>
@@ -173,7 +207,9 @@ include ('../app/config.php');
     <div class="sidenav-footer position-absolute w-100 bottom-0 ">
       <div class="mx-3">
         <a class="btn btn-outline-dark mt-4 w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard?ref=sidebarfree" type="button">Documentation</a>
-        <a class="btn bg-gradient-dark w-100" href="https://www.creative-tim.com/product/material-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
+        <a href="logout.php" class="btn btn-danger full-width">
+    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+</a>
       </div>
     </div>
   </aside>

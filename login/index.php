@@ -89,29 +89,38 @@ include ('../app/config.php');
              <img src="../assets/img/medicina/logo.jpg" alt="Descripción de la imagen" width="300" height="200">
             </div>
               <div class="card-body">
+
+
+
+
+              
               <form id="loginForm" method="POST" action="controller_login.php">
-  <div class="input-group input-group-outline mb-3">
-    <label class="form-label">Email</label>
-    <input type="email" class="form-control" name="email" oninput="toggleLabel(this)" required>
-  </div>
-  <div class="input-group input-group-outline mb-3">
-    <label class="form-label">Password</label>
-    <input type="password" class="form-control" name="password" oninput="toggleLabel(this)" required>
-  </div>
-  <script>
-    function toggleLabel(input) {
-      const label = input.previousElementSibling;
-      if (input.value !== '') {
-        label.style.opacity = 0;
-      } else {
-        label.style.opacity = 1;
-      }
-    }
-  </script>
-  <div class="text-center">
-    <button type="submit" class="btn bg-gradient-danger w-100 my-4 mb-2">Iniciar Sesion</button>
-  </div>
-</form>
+                <div class="input-group input-group-outline mb-3">
+                 <label class="form-label">Email</label>
+                 <input type="email" class="form-control" name="email" oninput="toggleLabel(this)" required>
+                 </div>
+                <div class="input-group input-group-outline mb-3">
+                 <label class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" oninput="toggleLabel(this)" required>
+             </div>
+            <script>
+                 function toggleLabel(input) {
+                 const label = input.previousElementSibling;
+                 if (input.value !== '') {
+                 label.style.opacity = 0;
+                  } else {
+                  label.style.opacity = 1;
+                  }
+                     }
+                </script>
+                 <div class="text-center">
+                 <button type="submit" class="btn bg-gradient-danger w-100 my-4 mb-2">Iniciar Sesion</button>
+                </div>
+                </form>
+
+
+
+
               </div>
             </div>
           </div>
