@@ -1,3 +1,4 @@
+
 <head>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -44,8 +45,8 @@
                 echo "<script>
                 Swal.fire({
                     icon: 'success',
-                    title: 'Bienvenido al sistema',
-                    text: 'Has iniciado sesión correctamente!',
+                    title: 'Buen Trabajo',
+                    text: '¡Bienvenido al sistema " . $_SESSION['user_nombre'] . "!',
                     showConfirmButton: false,
                     timer: 2000,
                     customClass: {

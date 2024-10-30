@@ -7,23 +7,16 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Dashboard</li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Hospital Virtual Carrera de Medicina</li>
           </ol>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-            <div class="input-group input-group-outline">
-              <label class="form-label">Type here...</label>
-              <input type="text" class="form-control">
-            </div>
+           
           </div>
           <ul class="navbar-nav d-flex align-items-center  justify-content-end">
-            <li class="nav-item d-flex align-items-center">
-              <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="https://www.creative-tim.com/builder?ref=navbar-material-dashboard">Online Builder</a>
-            </li>
-            <li class="mt-1">
-              <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/material-dashboard on GitHub">Star</a>
-            </li>
+           
+           
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
                 <div class="sidenav-toggler-inner">
@@ -124,9 +117,9 @@
     <div class="container-fluid py-2">
       <div class="row">
         <div class="ms-3">
-          <h3 class="mb-0 h4 font-weight-bolder">Dashboard</h3>
+          <h3 class="mb-0 h4 font-weight-bolder">Tablero de Control del Sistema </h3>
           <p class="mb-4">
-            Check the sales, value and bounce rate by country.
+            Sistema web de Optimizacion y Seguimiento a los Procesos Claves
           </p>
         </div>
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
@@ -287,10 +280,6 @@
                   </thead>
                   <tbody>
                     <tr>
-                     
-                 
-                     
-                 
                           <div class="progress">
                             <div class="progress-bar bg-gradient-info w-40" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="40"></div>
                           </div>
@@ -320,9 +309,9 @@
                 © <script>
                   document.write(new Date().getFullYear())
                 </script>,
-                made with <i class="fa fa-heart"></i> by
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-                for a better web.
+               creado por  
+                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank"><i class="bi bi-person-badge"></i>Univ Luque</a>
+             
               </div>
             </div>
            
