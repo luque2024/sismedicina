@@ -40,9 +40,12 @@ if (!isset($_SESSION['user_id'])) {
 <style>
 .full-width {
     display: block; /* Hace que el enlace se comporte como un bloque */
-    width: 100%;   /* Asegura que ocupe el 100% del contenedor */
-    text-align: center; /* Centra el texto dentro del enlace */
+    width: 100%;   
+    text-align: center; 
 }
+
+
+
 </style>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -55,7 +58,7 @@ if (!isset($_SESSION['user_id'])) {
       </a>
          </div>
 
-         <div style="text-align: center; font-size: 14px;">
+         <div style="text-align: center; font-size: 14px;"><i class="bi bi-person-circle" style="font-size: 24px;"></i>
   <?php
   echo $_SESSION['user_nombre'];
   ?>
@@ -69,18 +72,18 @@ if (!isset($_SESSION['user_id'])) {
       <a class="nav-link active text-white" style="background-color: #001f3f;" data-bs-toggle="collapse" href="#dashboardMenu1" role="button" aria-expanded="false" aria-controls="dashboardMenu1">
 
     <i class="material-symbols-rounded opacity-5">1</i>
-    <span class="nav-link-text ms-1">Roles</span>
+    <span class="nav-link-text ms-1" style="font-size: 15px;">
+    <i class="bi bi-ui-checks" style="margin-right: 8px;"></i>Roles
+    </span>
   </a>
   <div class="collapse" id="dashboardMenu1">
-    <ul class="nav ms-4">
-    <li class="red-block"><a href="../pages/dashboard-overview.html" class="nav-link">Overview</a></li>
-
-      <li><a href="../pages/dashboard-analytics.html" class="nav-link">Analytics</a></li>
-      <li><a href="../pages/dashboard-reports.html" class="nav-link">Reports</a></li>
+    <ul class="nav nav-treeview">
+    <li class="nav-item">
+    <a href="../roles/index.php" class="nav-link active" style="display: block; padding: 5px 5px; color: #2e4053; background-color: #d7dbdd ; text-decoration: none; border-radius: 4px; transition: background-color 0.3s;" > <i class="bi bi-card-checklist" style="margin-right: 8px;"></i>Listado de roles</a>
+    </li>
     </ul>
   </div>
 </li>
-
 <li class="nav-item">
 <a class="nav-link active text-white" style="background-color: #001f3f;" data-bs-toggle="collapse" href="#dashboardMenu2" role="button" aria-expanded="false" aria-controls="dashboardMenu2">
 
@@ -94,21 +97,9 @@ if (!isset($_SESSION['user_id'])) {
     <a href="../pages/dashboard-overview.html" class="nav-link active text-primary font-weight-bold">Overview</a>
 </li>
 </ul>
-
 <style>
-.custom-nav-link {
-  color: #007bff; /* Color del texto */
-  text-decoration: none; /* Quitar subrayado */
-  padding: 10px 15px; /* Espaciado interno */
-  border-radius: 4px; /* Bordes redondeados */
-  transition: background-color 0.3s, color 0.3s; /* Efecto de transición */
-}
-
-.custom-nav-link:hover {
-  background-color: #e9ecef; /* Color de fondo al pasar el mouse */
-  color: #0056b3; /* Color del texto al pasar el mouse */
-}
-</style>
+  
+  </style>
 
       <li><a href="../pages/dashboard-analytics.html" class="nav-link">Analytics</a></li>
       <li><a href="../pages/dashboard-reports.html" class="nav-link">Reports</a></li>
