@@ -124,23 +124,39 @@
         </div>
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
           <div class="card">
-            <div class="card-header p-2 ps-3">
+          <div class="card-footer p-2 ps-3" style="background-color: #001f3f; color: white;">
               <div class="d-flex justify-content-between">
                 <div>
                   <p class="text-sm mb-0 text-capitalize">MED -100 </p>
-                  <h4 class="mb-0">ANATOMIA HUMANA NEUROANATOMIA CLINICA</h4>
+                  <a href="../materia1/index.php" style="text-decoration: none;">
+                  <h4 class="mb-0" style="color: white;">ANATOMIA HUMANA NEUROANATOMIA CLINICA</h4>
+                  </a>
                 </div>
-                <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
-          <i class="material-symbols-rounded opacity-10" style="font-size: 25px;">medical_services</i>
+                <div class="icon icon-md icon-shape shadow-dark shadow text-center border-radius-lg" style="background-color: red;">
+                <i class="material-symbols-rounded opacity-10" style="font-size: 25px; color: white;">medical_services</i>
           </div>
               </div>
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-2 ps-3">
-            <video id="video" width="360" height="350" controls autoplay loop>
+                <br>
+    <video id="video" class="video-ajustado" autoplay muted loop>
         <source src="../assets/img/imagenes/video1.mp4" type="video/mp4">
+        
+    </video>
+
+
+<style>
+    /* Estilo para ajustar el tamaño del video al contenedor */
+    .card-footer .video-ajustado {
+        width: 100%;  /* Ajusta el ancho del video al 100% del contenedor */
+        height: 100%; /* Ajusta el alto del video al 100% del contenedor */
+        border-radius: 8px; /* Opcional: agrega un borde redondeado si deseas */
+    }
+</style>
+
        <br>
-       <br>
+
     </video>
     <script>
         const video = document.getElementById('video');
@@ -154,24 +170,35 @@
         </div>
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
           <div class="card">
-            <div class="card-header p-2 ps-3">
+          <div class="card-footer p-2 ps-3" style="background-color: #001f3f; color: white;">
               <div class="d-flex justify-content-between">
                 <div>
                   <p class="text-sm mb-0 text-capitalize">MED-101</p>
-                  <h4 class="mb-0">EMBRIOLOGIA CLINICA GENERICA MEDICA</h4>
+                  <a href="../materia1/index.php" style="text-decoration: none;">
+                  <h4 class="mb-0" style="color: white;">EMBRIOLOGIA CLINICA GENERICA MEDICA</h4>
+                  </a>
                 </div>
-                <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
-          <i class="material-symbols-rounded opacity-10" style="font-size: 25px;">medical_services</i>
+                <div class="icon icon-md icon-shape shadow-dark shadow text-center border-radius-lg" style="background-color: red;">
+          <i class="material-symbols-rounded opacity-10" style="font-size: 25px; color: white;">medical_services</i>
           </div>
               </div>
-            </div>
+              </div><br>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-2 ps-3">
-            <video id="video" width="360" height="350" controls autoplay loop>
+            <video id="video" class="video-ajustado" autoplay muted loop>
         <source src="../assets/img/imagenes/video2.mp4" type="video/mp4">
-       <br>
-       <br>
+        
     </video>
+
+
+<style>
+    /* Estilo para ajustar el tamaño del video al contenedor */
+    .card-footer .video-ajustado {
+        width: 100%;  /* Ajusta el ancho del video al 100% del contenedor */
+        height: 100%; /* Ajusta el alto del video al 100% del contenedor */
+        border-radius: 8px; /* Opcional: agrega un borde redondeado si deseas */
+    }
+</style>
     <script>
         const video = document.getElementById('video');
         video.addEventListener('ended', () => {
@@ -184,24 +211,35 @@
         </div>
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
           <div class="card">
-            <div class="card-header p-2 ps-3">
+          <div class="card-footer p-2 ps-3" style="background-color: #001f3f; color: white;">
               <div class="d-flex justify-content-between">
                 <div>
                   <p class="text-sm mb-0 text-capitalize">MED-102</p>
-                  <h4 class="mb-0">HISTOLOGIA MEDICA BIOLOGIA CELULAR</h4>
+                  <a href="../materia1/index.php" style="text-decoration: none;">
+                  <h4 class="mb-0" style="color: white;">HISTOLOGIA MEDICA BIOLOGIA CELULAR</h4>
+                  </a>
                 </div>
-                <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
-          <i class="material-symbols-rounded opacity-10" style="font-size: 25px;">medical_services</i>
+                <div class="icon icon-md icon-shape shadow-dark shadow text-center border-radius-lg" style="background-color: red;">
+                <i class="material-symbols-rounded opacity-10" style="font-size: 25px; color: white;">medical_services</i>
           </div>
               </div>
-            </div>
+              </div><br>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-2 ps-3">
-            <video id="video" width="360" height="350" controls autoplay loop>
+            <video id="video" class="video-ajustado" autoplay muted loop>
         <source src="../assets/img/imagenes/video3.mp4" type="video/mp4">
-       <br>
-       <br>
+        
     </video>
+
+
+<style>
+    /* Estilo para ajustar el tamaño del video al contenedor */
+    .card-footer .video-ajustado {
+        width: 100%;  /* Ajusta el ancho del video al 100% del contenedor */
+        height: 100%; /* Ajusta el alto del video al 100% del contenedor */
+        border-radius: 8px; /* Opcional: agrega un borde redondeado si deseas */
+    }
+</style>
     <script>
         const video = document.getElementById('video');
         video.addEventListener('ended', () => {
@@ -214,24 +252,35 @@
         </div>
         <div class="col-xl-3 col-sm-6">
           <div class="card">
-            <div class="card-header p-2 ps-3">
+          <div class="card-footer p-2 ps-3" style="background-color: #001f3f; color: white;">
               <div class="d-flex justify-content-between">
                 <div>
                   <p class="text-sm mb-0 text-capitalize">MED-103</p>
-                  <h4 class="mb-0">SALUD PÚBLICA E INTERCULTURALIDAD</h4>
+                  <a href="../materia1/index.php" style="text-decoration: none;">
+                  <h4 class="mb-0" style="color: white;">SALUD PÚBLICA E INTERCULTURALIDAD</h4>
+                  </a>
                 </div>
-                <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
-          <i class="material-symbols-rounded opacity-10" style="font-size: 25px;">medical_services</i>
+                <div class="icon icon-md icon-shape shadow-dark shadow text-center border-radius-lg" style="background-color: red;">
+                <i class="material-symbols-rounded opacity-10" style="font-size: 25px; color: white;">medical_services</i>
           </div>
               </div>
-            </div>
+              </div><br>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-2 ps-3">
-            <video id="video" width="360" height="350" controls autoplay loop>
+            <video id="video" class="video-ajustado" autoplay muted loop>
         <source src="../assets/img/imagenes/video4.mp4" type="video/mp4">
-       <br>
-       <br>
+        
     </video>
+
+
+<style>
+    /* Estilo para ajustar el tamaño del video al contenedor */
+    .card-footer .video-ajustado {
+        width: 100%;  /* Ajusta el ancho del video al 100% del contenedor */
+        height: 100%; /* Ajusta el alto del video al 100% del contenedor */
+        border-radius: 8px; /* Opcional: agrega un borde redondeado si deseas */
+    }
+</style>
     <script>
         const video = document.getElementById('video');
         video.addEventListener('ended', () => {
@@ -248,24 +297,35 @@
       <div class="row">
   <div class="col-xl-3 col-sm-6">
     <div class="card">
-      <div class="card-header p-2 ps-3">
+    <div class="card-footer p-2 ps-3" style="background-color: #001f3f; color: white;">
         <div class="d-flex justify-content-between">
           <div>
             <p class="text-sm mb-0 text-capitalize">MED-104</p>
-            <h4 class="mb-0">METODOLOGIA DE LA INVESTIGACIÓN</h4>
+            <a href="../materia1/index.php" style="text-decoration: none;">
+            <h4 class="mb-0" style="color: white;">METODOLOGIA DE LA INVESTIGACIÓN</h4>
+            </a>
           </div>
-          <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
-          <i class="material-symbols-rounded opacity-10" style="font-size: 25px;">medical_services</i>
+          <div class="icon icon-md icon-shape shadow-dark shadow text-center border-radius-lg" style="background-color: red;">
+          <i class="material-symbols-rounded opacity-10" style="font-size: 25px; color: white;">medical_services</i>
           </div>
         </div>
-      </div>
+        </div><br>
       <hr class="dark horizontal my-0">
       <div class="card-footer p-2 ps-3">
-      <video id="video" width="360" height="350" controls autoplay loop>
+      <video id="video" class="video-ajustado" autoplay muted loop>
         <source src="../assets/img/imagenes/video5.mp4" type="video/mp4">
-       <br>
-       <br>
+        
     </video>
+
+
+<style>
+    /* Estilo para ajustar el tamaño del video al contenedor */
+    .card-footer .video-ajustado {
+        width: 100%;  /* Ajusta el ancho del video al 100% del contenedor */
+        height: 100%; /* Ajusta el alto del video al 100% del contenedor */
+        border-radius: 8px; /* Opcional: agrega un borde redondeado si deseas */
+    }
+</style>
     <script>
         const video = document.getElementById('video');
         video.addEventListener('ended', () => {
@@ -279,24 +339,35 @@
 
   <div class="col-xl-3 col-sm-6">
     <div class="card">
-      <div class="card-header p-2 ps-3">
+    <div class="card-footer p-2 ps-3" style="background-color: #001f3f; color: white;">
         <div class="d-flex justify-content-between">
           <div>
             <p class="text-sm mb-0 text-capitalize">MED-105</p>
-            <h4 class="mb-0">INTEGREGACIÓN BÁSICA CLÍNICA</h4>
+            <a href="../materia1/index.php" style="text-decoration: none;">
+    <h4 class="mb-0" style="color: white;">INTEGREGACIÓN BÁSICA CLÍNICA</h4>
+</a>
           </div>
-          <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
-          <i class="material-symbols-rounded opacity-10" style="font-size: 25px;">medical_services</i>
+          <div class="icon icon-md icon-shape shadow-dark shadow text-center border-radius-lg" style="background-color: red;">
+          <i class="material-symbols-rounded opacity-10" style="font-size: 25px; color: white;">medical_services</i>
           </div>
         </div>
-      </div>
+      </div><br>
       <hr class="dark horizontal my-0">
       <div class="card-footer p-2 ps-3">
-      <video id="video" width="360" height="350" controls autoplay loop>
+      <video id="video" class="video-ajustado" autoplay muted loop>
         <source src="../assets/img/imagenes/video6.mp4" type="video/mp4">
-       <br>
-       <br>
+        
     </video>
+
+
+<style>
+    /* Estilo para ajustar el tamaño del video al contenedor */
+    .card-footer .video-ajustado {
+        width: 100%;  /* Ajusta el ancho del video al 100% del contenedor */
+        height: 100%; /* Ajusta el alto del video al 100% del contenedor */
+        border-radius: 8px; /* Opcional: agrega un borde redondeado si deseas */
+    }
+</style>
     <script>
         const video = document.getElementById('video');
         video.addEventListener('ended', () => {
