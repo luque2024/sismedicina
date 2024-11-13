@@ -219,7 +219,7 @@ if (!isset($_SESSION['user_id'])) {
     <div class="sidenav-footer position-absolute w-100 bottom-0 ">
       <div class="mx-3">
         <a class="btn btn-outline-dark mt-4 w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard?ref=sidebarfree" type="button">Documentation</a>
-        <a href="logout.php" class="btn btn-danger full-width">
+        <a href="../layout/logout.php" class="btn btn-danger full-width">
     <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
 </a>
       </div>
