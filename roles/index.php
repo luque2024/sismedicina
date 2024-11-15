@@ -1,14 +1,10 @@
 <?php
 include ('../app/config.php');
-
 ?>
 
 <?php
-session_start(); // Iniciar la sesión
-
-// Verifica si el usuario ha iniciado sesión
+session_start(); 
 if (!isset($_SESSION['user_id'])) {
-  // Redirige al usuario a la página de inicio de sesión sin mostrar SweetAlert
   header("Location: ../login/index.php");
   exit();
 }
@@ -25,28 +21,25 @@ if (!isset($_SESSION['user_id'])) {
   <title>
    Carrera Medicina
   </title>
-  <!--     Fonts and icons     -->
+
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" />
-  <!-- Nucleo Icons -->
+ 
   <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
-  <!-- Font Awesome Icons -->
+
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <!-- Material Icons -->
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-  <!-- CSS Files -->
+ 
   <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.2.0" rel="stylesheet" />
   
 </head>
 <style>
 .full-width {
-    display: block; /* Hace que el enlace se comporte como un bloque */
+    display: block; 
     width: 100%;   
     text-align: center; 
 }
-
-
-
 </style>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -88,25 +81,38 @@ if (!isset($_SESSION['user_id'])) {
 <li class="nav-item">
 <a class="nav-link active text-white" style="background-color: #001f3f;" data-bs-toggle="collapse" href="#dashboardMenu2" role="button" aria-expanded="false" aria-controls="dashboardMenu2">
 
-    <i class="material-symbols-rounded opacity-5">dashboard2</i>
-    <span class="nav-link-text ms-1">Dashboard2</span>
+    <i class="material-symbols-rounded opacity-5">2</i>
+    <span class="nav-link-text ms-1" style="font-size: 15px;">
+    <i class="bi bi-book" style="margin-right: 8px;"></i>Asignaturas</span>
   </a>
   <div class="collapse" id="dashboardMenu2">
-    <ul class="nav ms-4">
-    <ul class="nav">
-  <li>
-    <a href="../pages/dashboard-overview.html" class="nav-link active text-primary font-weight-bold">Overview</a>
-</li>
+  <ul class="nav nav-treeview">
+    <li class="nav-item">
+    <a href="../asignaturas/index.php" class="nav-link active" style="display: block; padding: 5px 5px; color: #2e4053; background-color: #d7dbdd ; text-decoration: none; border-radius: 4px; transition: background-color 0.3s;" > <i class="bi bi-journal-bookmark-fill" style="margin-right: 8px;"></i>1° año</a>
+    </li>
 </ul>
-<style>
-  
-  </style>
-
-      <li><a href="../pages/dashboard-analytics.html" class="nav-link">Analytics</a></li>
-      <li><a href="../pages/dashboard-reports.html" class="nav-link">Reports</a></li>
-    </ul>
-  </div>
-</li>
+<ul class="nav nav-treeview">
+    <li class="nav-item">
+    <a href="../roles/index.php" class="nav-link active" style="display: block; padding: 5px 5px; color: #2e4053; background-color: #d7dbdd ; text-decoration: none; border-radius: 4px; transition: background-color 0.3s;" > <i class="bi bi-journal-bookmark-fill" style="margin-right: 8px;"></i>2° año</a>
+    </li>
+</ul>
+<ul class="nav nav-treeview">
+    <li class="nav-item">
+    <a href="../roles/index.php" class="nav-link active" style="display: block; padding: 5px 5px; color: #2e4053; background-color: #d7dbdd ; text-decoration: none; border-radius: 4px; transition: background-color 0.3s;" > <i class="bi bi-journal-bookmark-fill" style="margin-right: 8px;"></i>3° año</a>
+    </li>
+</ul>
+<ul class="nav nav-treeview">
+    <li class="nav-item">
+    <a href="../roles/index.php" class="nav-link active" style="display: block; padding: 5px 5px; color: #2e4053; background-color: #d7dbdd ; text-decoration: none; border-radius: 4px; transition: background-color 0.3s;" > <i class="bi bi-journal-bookmark-fill" style="margin-right: 8px;"></i>4° año</a>
+    </li>
+</ul>
+<ul class="nav nav-treeview">
+    <li class="nav-item">
+    <a href="../roles/index.php" class="nav-link active" style="display: block; padding: 5px 5px; color: #2e4053; background-color: #d7dbdd ; text-decoration: none; border-radius: 4px; transition: background-color 0.3s;" > <i class="bi bi-journal-bookmark-fill" style="margin-right: 8px;"></i>5° año</a>
+    </li>
+</ul>
+     
+   
 
 
 <li class="nav-item">
@@ -240,7 +246,34 @@ if (!isset($_SESSION['user_id'])) {
                 </div>
               </a>
             </li>
-       
+            <li class="nav-item px-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0">
+                <i class="material-symbols-rounded fixed-plugin-button-nav">settings</i>
+              </a>
+            </li>
+            <li class="nav-item dropdown pe-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="material-symbols-rounded">notifications</i>
+              </a>
+              <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
+                <li class="mb-2">
+                  <a class="dropdown-item border-radius-md" href="javascript:;">
+                    <div class="d-flex py-1">
+                      <div class="my-auto">
+                        <img src="../assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
+                      </div>
+                      <div class="d-flex flex-column justify-content-center">
+                        <h6 class="text-sm font-weight-normal mb-1">
+                          <span class="font-weight-bold">New message</span> from Laur
+                        </h6>
+                        <p class="text-xs text-secondary mb-0">
+                          <i class="fa fa-clock me-1"></i>
+                          13 minutes ago
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
                 <li class="mb-2">
                   <a class="dropdown-item border-radius-md" href="javascript:;">
                     <div class="d-flex py-1">
@@ -300,6 +333,7 @@ if (!isset($_SESSION['user_id'])) {
         </div>
       </div>
     </nav>
+
     <!-- End Navbar -->
     <div class="container-fluid py-2">
       <div class="row">
@@ -309,79 +343,34 @@ if (!isset($_SESSION['user_id'])) {
             Sistema web de Optimizacion y Seguimiento a los Procesos Claves
           </p>
         </div>
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-          <div class="card">
-            <div class="card-header p-2 ps-3">
-              <div class="d-flex justify-content-between">
-                <div>
-                  <p class="text-sm mb-0 text-capitalize">Today's Money</p>
-                  <h4 class="mb-0">$53k</h4>
-                </div>
-                <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
-                  <i class="material-symbols-rounded opacity-10">weekend</i>
-                </div>
-              </div>
+
+
+ 
+        <title>Card Listado de Roles</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card-header-navy {
+            background-color: #001f3f; /* Azul marino */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header card-header-navy">
+            <h5 class="card-title text-center mb-0">Listado de Roles</h5>
             </div>
-            <hr class="dark horizontal my-0">
-            <div class="card-footer p-2 ps-3">
-              <p class="mb-0 text-sm"><span class="text-success font-weight-bolder">+55% </span>than last week</p>
+            <div class="card-body">
+                <p>Aquí puedes agregar el contenido de la lista de roles o cualquier otro detalle.</p>
             </div>
-          </div>
         </div>
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-          <div class="card">
-            <div class="card-header p-2 ps-3">
-              <div class="d-flex justify-content-between">
-                <div>
-                  <p class="text-sm mb-0 text-capitalize">Today's Users</p>
-                  <h4 class="mb-0">2300</h4>
-                </div>
-                <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
-                  <i class="material-symbols-rounded opacity-10">person</i>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
                 </div>
               </div>
-            </div>
-            <hr class="dark horizontal my-0">
-            <div class="card-footer p-2 ps-3">
-              <p class="mb-0 text-sm"><span class="text-success font-weight-bolder">+3% </span>than last month</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-          <div class="card">
-            <div class="card-header p-2 ps-3">
-              <div class="d-flex justify-content-between">
-                <div>
-                  <p class="text-sm mb-0 text-capitalize">Ads Views</p>
-                  <h4 class="mb-0">3,462</h4>
-                </div>
-                <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
-                  <i class="material-symbols-rounded opacity-10">leaderboard</i>
-                </div>
-              </div>
-            </div>
-            <hr class="dark horizontal my-0">
-            <div class="card-footer p-2 ps-3">
-              <p class="mb-0 text-sm"><span class="text-danger font-weight-bolder">-2% </span>than yesterday</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6">
-          <div class="card">
-            <div class="card-header p-2 ps-3">
-              <div class="d-flex justify-content-between">
-                <div>
-                  <p class="text-sm mb-0 text-capitalize">Sales</p>
-                  <h4 class="mb-0">$103,430</h4>
-                </div>
-                <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
-                  <i class="material-symbols-rounded opacity-10">weekend</i>
-                </div>
-              </div>
-            </div>
-            <hr class="dark horizontal my-0">
-            <div class="card-footer p-2 ps-3">
-              <p class="mb-0 text-sm"><span class="text-success font-weight-bolder">+5% </span>than yesterday</p>
             </div>
           </div>
         </div>
