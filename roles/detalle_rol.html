@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Rol</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Detalles del Rol</h1>
+        <div id="detalleRol" class="card p-4">
+            <!-- Los detalles del rol se agregarán aquí dinámicamente -->
+        </div>
+        <a href="index.php" class="btn btn-primary mt-3">Volver</a>
+    </div>
+
+    <script>
+        // Obtener el ID del rol desde la URL
+        const params = new URLSearchParams(window.location.search);
+        const idRol = params.get('id');
+
+        // Verificar que el ID esté presente
+        if (!idRol) {
+            document.getElementById('detalleRol').innerHTML = '<p class="text-danger">No se proporcionó un ID válido.</p>';
+        } else {
+            // Solicitar los detalles del rol
+            fetch(`ver_rol.php?id=${idRol}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const rol = data.data;
+                        const detalleHTML = `
+                            <h3>Rol: ${rol.nombre_rol}</h3>
+                            <p><strong>ID:</strong> ${rol.id_rol}</p>
+                            <p><strong>Nombre:</strong> ${rol.nombre_rol}</p>
+                            <p><strong>Fecha de Creación:</strong> ${rol.fyh_creacion}</p>
+                            <p><strong>Fecha de Actualización:</strong> ${rol.fyh_actualizacion}</p>
+                            <p><strong>Estado:</strong> ${rol.estado == 1 ? 'Activo' : 'Inactivo'}</p>
+                        `;
+                        document.getElementById('detalleRol').innerHTML = detalleHTML;
+                    } else {
+                        document.getElementById('detalleRol').innerHTML = `<p class="text-danger">${data.error}</p>`;
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('detalleRol').innerHTML = '<p class="text-danger">Error al obtener los detalles del rol.</p>';
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+</body>
+</html>

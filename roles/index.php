@@ -16,7 +16,8 @@ if (!isset($_SESSION['user_id'])) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <title>
    Carrera Medicina
@@ -338,8 +339,8 @@ if (!isset($_SESSION['user_id'])) {
     <div class="container-fluid py-2">
       <div class="row">
         <div class="ms-3">
-          <h3 class="mb-0 h4 font-weight-bolder">Tablero de Control del Sistema </h3>
-          <p class="mb-4">
+          <h3 class="mb-0 h4 font-weight-bolder">Listado de Roles </h3>
+          <p class="mb-6">
             Sistema web de Optimizacion y Seguimiento a los Procesos Claves
           </p>
         </div>
@@ -353,16 +354,221 @@ if (!isset($_SESSION['user_id'])) {
             background-color: #001f3f; /* Azul marino */
             color: white;
         }
+        .btn-custom-edit {
+  background-color: #003366;  /* Azul marino */
+  color: white;
+  border: none;
+}
+
+.btn-custom-edit:hover {
+  background-color: #002244;  /* Un tono más oscuro de azul marino para el hover */
+  color: white;
+}
+/* Cambiar el fondo de la tabla a blanco y el color de las letras a azul marino */
+.table {
+    background-color: white;  /* Fondo blanco */
+    color: #003366;  /* Color de texto azul marino */
+}
+
+/* Cambiar el color de las celdas del encabezado */
+.table th {
+    background-color: #003366;  /* Fondo azul marino en el encabezado */
+    color: white;  /* Texto blanco en el encabezado */
+}
+
+/* Cambiar el color de las celdas del cuerpo */
+.table td {
+
+}
+#formularioRol {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+/* Estilos para el formulario deslizante */
+.slide-form {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 1050;
+  transition: top 0.5s ease-in-out;
+  padding: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slide-form.active {
+  top: 0;
+}
     </style>
 </head>
 <body>
     <div class="container mt-5">
         <div class="card">
-            <div class="card-header card-header-navy">
-            <h5 class="card-title text-center mb-0">Listado de Roles</h5>
-            </div>
             <div class="card-body">
-                <p>Aquí puedes agregar el contenido de la lista de roles o cualquier otro detalle.</p>
+            <div class="container mt-5">
+        <h1 class="mb-4">Gestión de Roles</h1>
+        <div class="progress">
+                            <div class="progress-bar bg-gradient-info w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                          <div class="container mt-4">
+  <!-- Botón para mostrar el formulario -->
+  <button class="btn btn-primary btn-sm float-end" onclick="toggleFormulario()">
+    <i class="fas fa-plus fa-2x"></i> Crear Nuevo Rol
+  </button>
+
+  <!-- Formulario oculto por defecto -->
+  <div id="formularioRol" class="card mt-4" style="display: none; max-width: 400px; margin-left: auto; margin-right: auto;">
+    <div class="card-body">
+      <h5 class="card-title text-center">Crear Nuevo Rol</h5>
+      <div class="form-container" id="formularioRol">
+  <form action="procesar_rol.php" method="POST" class="styled-form">
+    <!-- Campo para el nombre del rol -->
+    <div class="form-group">
+      <label for="nombre_rol" class="form-label">Nombre del Rol:</label>
+      <input type="text" id="nombre_rol" name="nombre_rol" class="form-input" placeholder="Ingrese el nombre del rol" required>
+    </div>
+
+    <!-- Selección del estado -->
+    <div class="form-group">
+      <label for="estado" class="form-label">Estado:</label>
+      <select id="estado" name="estado" class="form-select" required>
+        <option value="1">Activo</option>
+        <option value="0">Inactivo</option>
+      </select>
+    </div>
+
+    <!-- Botones para enviar y cancelar -->
+    <div class="form-group">
+      <button type="submit" class="btn-submit">Agregar Rol</button>
+      <button type="button" class="btn-cancel" onclick="toggleFormulario()">Cancelar</button>
+    </div>
+  </form>
+</div>
+
+<!-- Botón para mostrar el formulario -->
+<button class="btn btn-primary btn-sm mt-4 float-end" onclick="toggleFormulario()">
+  <i class="fas fa-plus fa-2x"></i> Crear Nuevo Rol
+</button>
+    <script>
+    function toggleFormulario() {
+  const formulario = document.getElementById('formularioRol');
+  // Alternar la visibilidad del formulario
+  if (formulario.style.display === 'none') {
+    formulario.style.display = 'block';
+  } else {
+    formulario.style.display = 'none';
+  }
+}
+
+// Evento para manejar el envío del formulario
+document.getElementById('nuevoRolForm').addEventListener('submit', function (event) {
+  event.preventDefault(); // Evitar el envío tradicional del formulario
+  const nombreRol = document.getElementById('nombreRol').value;
+  if (nombreRol.trim() !== '') {
+    alert(`Nuevo Rol creado: ${nombreRol}`); // Aquí puedes integrar tu lógica para guardar
+    toggleFormulario(); // Ocultar el formulario después de guardar
+  }
+});
+</script>
+  </div>
+</div>
+<table class="table table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>ID Rol</th>
+            <th>Nombre Rol</th>
+            <th>Fecha Creación</th>
+            <th>Fecha Actualización</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody id="rolesTable">
+        <!-- Aquí se llenarán las filas de la tabla -->
+    </tbody>
+</table>
+    </div>
+    <script>
+    // Obtener los datos desde obtener_roles.php
+    fetch('obtener_roles.php')
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.getElementById('rolesTable');
+            data.forEach(role => {
+                const row = `
+                    <tr>
+                        <td>${role.id_rol}</td>
+                        <td>${role.nombre_rol}</td>
+                        <td>${role.fyh_creacion}</td>
+                        <td>${role.fyh_actualizacion}</td>
+                        <td>
+                            ${role.estado == 1 ? 'Activo' : 'Inactivo'}
+                          
+                        </td>
+                        <td>
+
+<button class="btn btn-custom-edit btn-sm me-1" onclick="editarRol(${role.id_rol})">
+  <i class="fas fa-pencil-alt fa-3x"></i> Editar
+</button>
+<button class="btn btn-danger btn-sm" onclick="eliminarRol(${role.id_rol})">
+  <i class="fas fa-trash fa-3x"></i> Eliminar
+</button>
+
+                        </td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            });
+        })
+        .catch(error => console.error('Error al obtener los datos:', error));
+
+    // Funciones de los botones
+    function verRol(id) {
+        alert(`Ver detalles del rol con ID: ${id}`);
+    }
+
+    function editarRol(id) {
+        alert(`Editar rol con ID: ${id}`);
+        window.location.href = `editar_rol.php?id=${id}`;
+    }
+
+    function eliminarRol(id) {
+        if (confirm('¿Estás seguro de que deseas eliminar este rol?')) {
+            fetch(`eliminar_rol.php?id=${id}`, { method: 'DELETE' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Rol eliminado correctamente.');
+                        location.reload();
+                    } else {
+                        alert('Error al eliminar el rol.');
+                    }
+                })
+                .catch(error => console.error('Error al eliminar el rol:', error));
+        }
+    }
+
+    // Cambiar el estado del rol
+    function cambiarEstado(id, estadoActual) {
+        const nuevoEstado = estadoActual == 1 ? 0 : 1; // Cambiar entre 1 (activo) y 0 (inactivo)
+
+        fetch(`cambiar_estado_rol.php?id=${id}&estado=${nuevoEstado}`, {
+            method: 'POST'
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Estado del rol actualizado.');
+                location.reload(); // Recargar la página para reflejar el cambio
+            } else {
+                alert('Error al cambiar el estado del rol.');
+            }
+        })
+        .catch(error => console.error('Error al cambiar el estado del rol:', error));
+    }
+</script>
+
             </div>
         </div>
     </div>
@@ -375,74 +581,13 @@ if (!isset($_SESSION['user_id'])) {
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-4 col-md-6 mt-4 mb-4">
-          <div class="card">
-            <div class="card-body">
-              <h6 class="mb-0 ">Website Views</h6>
-              <p class="text-sm ">Last Campaign Performance</p>
-              <div class="pe-2">
-                <div class="chart">
-                  <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
-                </div>
-              </div>
-              <hr class="dark horizontal">
-              <div class="d-flex ">
-                <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
-                <p class="mb-0 text-sm"> campaign sent 2 days ago </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mt-4 mb-4">
-          <div class="card ">
-            <div class="card-body">
-              <h6 class="mb-0 "> Daily Sales </h6>
-              <p class="text-sm "> (<span class="font-weight-bolder">+15%</span>) increase in today sales. </p>
-              <div class="pe-2">
-                <div class="chart">
-                  <canvas id="chart-line" class="chart-canvas" height="170"></canvas>
-                </div>
-              </div>
-              <hr class="dark horizontal">
-              <div class="d-flex ">
-                <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
-                <p class="mb-0 text-sm"> updated 4 min ago </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 mt-4 mb-3">
-          <div class="card">
-            <div class="card-body">
-              <h6 class="mb-0 ">Completed Tasks</h6>
-              <p class="text-sm ">Last Campaign Performance</p>
-              <div class="pe-2">
-                <div class="chart">
-                  <canvas id="chart-line-tasks" class="chart-canvas" height="170"></canvas>
-                </div>
-              </div>
-              <hr class="dark horizontal">
-              <div class="d-flex ">
-                <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
-                <p class="mb-0 text-sm">just updated</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+   
       <div class="row mb-4">
         <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
           <div class="card">
             <div class="card-header pb-0">
               <div class="row">
-                <div class="col-lg-6 col-7">
-                  <h6>Projects</h6>
-                  <p class="text-sm mb-0">
-                    <i class="fa fa-check text-info" aria-hidden="true"></i>
-                    <span class="font-weight-bold ms-1">30 done</span> this month
-                  </p>
-                </div>
+              
                 <div class="col-lg-6 col-5 my-auto text-end">
                  
                 </div>

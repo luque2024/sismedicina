@@ -19,8 +19,8 @@
         <!-- Selección del estado -->
         <label for="estado">Estado:</label>
         <select id="estado" name="estado" required>
-            <option value="activo">Activo</option>
-            <option value="inactivo">Inactivo</option>
+            <option value="1">Activo</option>
+            <option value="0">Inactivo</option>
         </select>
         
         <br><br>

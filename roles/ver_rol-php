@@ -1,0 +1,42 @@
+<?php
+// Configuración de conexión
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "sismedicina";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Verificar si se envió el ID del rol
+if (isset($_GET['id'])) {
+    $id_rol = intval($_GET['id']);
+
+    // Depuración: Verificar que el ID se ha recibido correctamente
+    error_log("ID del rol recibido: " . $id_rol);
+
+    // Consulta para obtener los detalles del rol
+    $sql = "SELECT id_rol, nombre_rol, fyh_creacion, fyh_actualizacion, estado FROM roles WHERE id_rol = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id_rol);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $rol = $result->fetch_assoc();
+        echo json_encode(["success" => true, "data" => $rol]);
+    } else {
+        echo json_encode(["success" => false, "error" => "Rol no encontrado"]);
+    }
+
+    $stmt->close();
+} else {
+    echo json_encode(["success" => false, "error" => "ID no proporcionado"]);
+}
+
+$conn->close();
+?>
