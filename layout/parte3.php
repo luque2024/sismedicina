@@ -342,6 +342,4 @@ if (!isset($_SESSION['user_id'])) {
       </div>
     </nav>
 
-    <?php
-    include('./parte2.php');
-    ?>
+  

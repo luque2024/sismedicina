@@ -21,28 +21,25 @@ if (!isset($_SESSION['user_id'])) {
   <title>
    Carrera Medicina
   </title>
-  <!--     Fonts and icons     -->
+
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" />
-  <!-- Nucleo Icons -->
+ 
   <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
-  <!-- Font Awesome Icons -->
+
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <!-- Material Icons -->
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-  <!-- CSS Files -->
+ 
   <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.2.0" rel="stylesheet" />
   
 </head>
 <style>
 .full-width {
-    display: block; /* Hace que el enlace se comporte como un bloque */
+    display: block; 
     width: 100%;   
     text-align: center; 
 }
-
-
-
 </style>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -222,7 +219,3 @@ if (!isset($_SESSION['user_id'])) {
       </div>
     </div>
   </aside>
-
-<?php
-include ( '../layout/parte2.php');
-  ?>

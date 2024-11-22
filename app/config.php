@@ -4,7 +4,6 @@ define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_DATABASE', 'sismedicina'); // Cambia esto al nombre de tu base de datos
-
 define ('APP_NAME','Sistema de medicina');
 define ('APP_url','http://localhost/proy-medicina');
 define ('KEY_API_MAPS','');

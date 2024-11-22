@@ -106,7 +106,7 @@
                    label.style.opacity = 1;
                   }
                   }
-               </script>   
+               </script>    
                   <div class="text-center">
                     <button type="button" class="btn bg-gradient-danger w-100 my-4 mb-2">Iniciar Sesion</button>
                   </div>

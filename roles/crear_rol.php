@@ -1,13 +1,235 @@
 <?php
-include('../layout/parte1.php')
-
+include ('../app/config.php');
 ?>
 
+<?php
+session_start(); 
+if (!isset($_SESSION['user_id'])) {
+  header("Location: ../login/index.php");
+  exit();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <title>
+   Carrera Medicina
+  </title>
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" />
+ 
+  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+ 
+  <link id="pagestyle" href="../assets/css/material-dashboard.css?v=3.2.0" rel="stylesheet" />
+  
+</head>
+<style>
+.full-width {
+    display: block; 
+    width: 100%;   
+    text-align: center; 
+}
+</style>
+
+<body class="g-sidenav-show  bg-gray-100">
+  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2  bg-white my-2" id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-dark opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand px-4 py-3 m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
+        <img src="../assets/img/medicina/logo.jpg" class="navbar-brand-img" width="26" height="26" alt="main_logo">
+        <span class="ms-1 text-sm text-dark">SIS_MEDICINA</span>
+      </a>
+         </div>
+
+         <div style="text-align: center; font-size: 14px;"><i class="bi bi-person-circle" style="font-size: 24px;"></i>
+  <?php
+  echo $_SESSION['user_nombre'];
+  ?>
+</div>
+
+         
+    <hr class="horizontal dark mt-0 mb-2">
+    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+      <li class="nav-item">
+      <a class="nav-link active text-white" style="background-color: #001f3f;" data-bs-toggle="collapse" href="#dashboardMenu1" role="button" aria-expanded="false" aria-controls="dashboardMenu1">
+
+    <i class="material-symbols-rounded opacity-5">1</i>
+    <span class="nav-link-text ms-1" style="font-size: 15px;">
+    <i class="bi bi-ui-checks" style="margin-right: 8px;"></i>Roles
+    </span>
+  </a>
+  <div class="collapse" id="dashboardMenu1">
+    <ul class="nav nav-treeview">
+    <li class="nav-item">
+    <a href="../roles/index.php" class="nav-link active" style="display: block; padding: 5px 5px; color: #2e4053; background-color: #d7dbdd ; text-decoration: none; border-radius: 4px; transition: background-color 0.3s;" > <i class="bi bi-card-checklist" style="margin-right: 8px;"></i>Listado de roles</a>
+    </li>
+    </ul>
+  </div>
+</li>
+<li class="nav-item">
+<a class="nav-link active text-white" style="background-color: #001f3f;" data-bs-toggle="collapse" href="#dashboardMenu2" role="button" aria-expanded="false" aria-controls="dashboardMenu2">
+
+    <i class="material-symbols-rounded opacity-5">2</i>
+    <span class="nav-link-text ms-1" style="font-size: 15px;">
+    <i class="bi bi-book" style="margin-right: 8px;"></i>Asignaturas</span>
+  </a>
+  <div class="collapse" id="dashboardMenu2">
+  <ul class="nav nav-treeview">
+    <li class="nav-item">
+    <a href="../asignaturas/index.php" class="nav-link active" style="display: block; padding: 5px 5px; color: #2e4053; background-color: #d7dbdd ; text-decoration: none; border-radius: 4px; transition: background-color 0.3s;" > <i class="bi bi-journal-bookmark-fill" style="margin-right: 8px;"></i>1° año</a>
+    </li>
+</ul>
+<ul class="nav nav-treeview">
+    <li class="nav-item">
+    <a href="../roles/index.php" class="nav-link active" style="display: block; padding: 5px 5px; color: #2e4053; background-color: #d7dbdd ; text-decoration: none; border-radius: 4px; transition: background-color 0.3s;" > <i class="bi bi-journal-bookmark-fill" style="margin-right: 8px;"></i>2° año</a>
+    </li>
+</ul>
+<ul class="nav nav-treeview">
+    <li class="nav-item">
+    <a href="../roles/index.php" class="nav-link active" style="display: block; padding: 5px 5px; color: #2e4053; background-color: #d7dbdd ; text-decoration: none; border-radius: 4px; transition: background-color 0.3s;" > <i class="bi bi-journal-bookmark-fill" style="margin-right: 8px;"></i>3° año</a>
+    </li>
+</ul>
+<ul class="nav nav-treeview">
+    <li class="nav-item">
+    <a href="../roles/index.php" class="nav-link active" style="display: block; padding: 5px 5px; color: #2e4053; background-color: #d7dbdd ; text-decoration: none; border-radius: 4px; transition: background-color 0.3s;" > <i class="bi bi-journal-bookmark-fill" style="margin-right: 8px;"></i>4° año</a>
+    </li>
+</ul>
+<ul class="nav nav-treeview">
+    <li class="nav-item">
+    <a href="../roles/index.php" class="nav-link active" style="display: block; padding: 5px 5px; color: #2e4053; background-color: #d7dbdd ; text-decoration: none; border-radius: 4px; transition: background-color 0.3s;" > <i class="bi bi-journal-bookmark-fill" style="margin-right: 8px;"></i>5° año</a>
+    </li>
+</ul>
+     
+   
+
+
+<li class="nav-item">
+<a class="nav-link active text-white" style="background-color: #001f3f;" data-bs-toggle="collapse" href="#dashboardMenu3" role="button" aria-expanded="false" aria-controls="dashboardMenu3">
+
+    <i class="material-symbols-rounded opacity-5">dashboard3</i>
+    <span class="nav-link-text ms-1">Dashboard3</span>
+  </a>
+  <div class="collapse" id="dashboardMenu3">
+    <ul class="nav ms-4">
+      <li><a href="../pages/dashboard-overview.html" class="nav-link">Overview</a></li>
+      <li><a href="../pages/dashboard-analytics.html" class="nav-link">Analytics</a></li>
+      <li><a href="../pages/dashboard-reports.html" class="nav-link">Reports</a></li>
+    </ul>
+  </div>
+</li>
+
+<li class="nav-item">
+<a class="nav-link active text-white" style="background-color: #001f3f;" data-bs-toggle="collapse" href="#dashboardMenu4" role="button" aria-expanded="false" aria-controls="dashboardMenu4">
+
+    <i class="material-symbols-rounded opacity-5">dashboard4</i>
+    <span class="nav-link-text ms-1">Dashboard4</span>
+  </a>
+  <div class="collapse" id="dashboardMenu4">
+    <ul class="nav ms-4">
+      <li><a href="../pages/dashboard-overview.html" class="nav-link">Overview</a></li>
+      <li><a href="../pages/dashboard-analytics.html" class="nav-link">Analytics</a></li>
+      <li><a href="../pages/dashboard-reports.html" class="nav-link">Reports</a></li>
+    </ul>
+  </div>
+</li>
+
+
+
+<li class="nav-item">
+<a class="nav-link active text-white" style="background-color: #001f3f;" data-bs-toggle="collapse" href="#dashboardMenu5" role="button" aria-expanded="false" aria-controls="dashboardMenu5">
+
+    <i class="material-symbols-rounded opacity-5">dashboard5</i>
+    <span class="nav-link-text ms-1">Dashboard5</span>
+  </a>
+  <div class="collapse" id="dashboardMenu5">
+    <ul class="nav ms-4">
+      <li><a href="../pages/dashboard-overview.html" class="nav-link">Overview</a></li>
+      <li><a href="../pages/dashboard-analytics.html" class="nav-link">Analytics</a></li>
+      <li><a href="../pages/dashboard-reports.html" class="nav-link">Reports</a></li>
+    </ul>
+  </div>
+</li>
+
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/tables.html">
+            <i class="material-symbols-rounded opacity-5">table_view</i>
+            <span class="nav-link-text ms-1">Tables</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/billing.html">
+            <i class="material-symbols-rounded opacity-5">receipt_long</i>
+            <span class="nav-link-text ms-1">Billing</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/virtual-reality.html">
+            <i class="material-symbols-rounded opacity-5">view_in_ar</i>
+            <span class="nav-link-text ms-1">Virtual Reality</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/rtl.html">
+            <i class="material-symbols-rounded opacity-5">format_textdirection_r_to_l</i>
+            <span class="nav-link-text ms-1">RTL</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/notifications.html">
+            <i class="material-symbols-rounded opacity-5">notifications</i>
+            <span class="nav-link-text ms-1">Notifications</span>
+          </a>
+        </li>
+        <li class="nav-item mt-3">
+          <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-5">Account pages</h6>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/profile.html">
+            <i class="material-symbols-rounded opacity-5">person</i>
+            <span class="nav-link-text ms-1">Profile</span>
+          </a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="../pages/sign-up.html">
+            <i class="material-symbols-rounded opacity-5">assignment</i>
+            <span class="nav-link-text ms-1">Sign Up</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="sidenav-footer position-absolute w-100 bottom-0 ">
+      <div class="mx-3">
+        <a class="btn btn-outline-dark mt-4 w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard?ref=sidebarfree" type="button">Documentation</a>
+        <a href="../layout/logout.php" class="btn btn-danger full-width">
+    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-3 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
-       
+          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Hospital Virtual Carrera de Medicina</li>
+          </ol>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -129,10 +351,77 @@ include('../layout/parte1.php')
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css"> <!-- Referencia a estilos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Íconos -->
-    <style>
-
-    </style>
+  
 </head>
+<style>
+  /* Estilos generales del formulario */
+.styled-form {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Estilos de los grupos de formulario */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Estilos para las etiquetas de los campos */
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Estilos para los campos de entrada */
+.form-input, .form-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Estilo para el campo de entrada de texto cuando está enfocado */
+.form-input:focus, .form-select:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Estilos para los botones */
+.btn-submit {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
+}
+
+.btn-cancel {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn-cancel:hover {
+    background-color: #e53935;
+}
+  </style>
 <body>
     <div class="container mt-5">
         <div class="card">
@@ -142,139 +431,71 @@ include('../layout/parte1.php')
         <div class="progress">
                             <div class="progress-bar bg-gradient-info w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                           </div>
-                          <div class="container mt-4">
-                          <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+      
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Agregar Nuevo Rol</title>
+    <!-- Puedes agregar aquí tu CSS para dar estilo al formulario -->
+</head>
+<body>
+    <h2>Agregar Nuevo Rol</h2>
 
-<!-- Contenedor para alinear el botón a la derecha -->
-<div style="text-align: right;">
-    <a href="crear_rol.php" class="btn btn-primary">
-        <i class="fas fa-plus-circle" style="margin-right: 5px;"></i> Crear Rol
+    <form action="procesar_rol.php" method="POST" id="nuevoRolForm" class="styled-form">
+    <!-- Campo para el nombre del rol -->
+    <div class="form-group">
+        <label for="nombre_rol" class="form-label">Nombre del Rol:</label>
+        <input type="text" id="nombre_rol" name="nombre_rol" class="form-input" placeholder="Ingrese el nombre del rol" required>
+    </div>
+
+    <!-- Selección del estado -->
+    <div class="form-group">
+        <label for="estado" class="form-label">Estado:</label>
+        <select id="estado" name="estado" class="form-select" required>
+            <option value="activo">Activo</option>
+            <option value="inactivo">Inactivo</option>
+        </select>
+    </div>
+    <button type="submit" class="btn-submit">Agregar Rol</button>
+    <a href="./index.php" class="btn btn-cancel">
+        <i class=" " style="margin-right: 5px;"></i> Cancelar
     </a>
 </div>
-<table class="table table-bordered">
-    <thead class="table-dark">
-        <tr>
-            <th>ID Rol</th>
-            <th>Nombre Rol</th>
-            <th>Fecha Creación</th>
-            <th>Fecha Actualización</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody id="rolesTable">
-        <!-- Aquí se llenarán las filas de la tabla -->
-    </tbody>
-</table>
     </div>
-    <script>
-    // Obtener los datos desde obtener_roles.php
-    fetch('obtener_roles.php')
-        .then(response => response.json())
-        .then(data => {
-            const tableBody = document.getElementById('rolesTable');
-            data.forEach(role => {
-                const row = `
+</form>
+</body>
+                  </thead>
+                  <tbody>
                     <tr>
-                        <td>${role.id_rol}</td>
-                        <td>${role.nombre_rol}</td>
-                        <td>${role.fyh_creacion}</td>
-                        <td>${role.fyh_actualizacion}</td>
-                        <td>
-                            ${role.estado == 1 ? 'Activo' : 'Inactivo'}
-                          
-                        </td>
-                        <td>
-
-<button class="btn btn-custom-edit btn-sm me-1" onclick="editarRol(${role.id_rol})">
-  <i class="fas fa-pencil-alt fa-3x"></i> Editar
-</button>
-<button class="btn btn-danger btn-sm" onclick="eliminarRol(${role.id_rol})">
-  <i class="fas fa-trash fa-3x"></i> Eliminar
-</button>
-
-                        </td>
+                        </div>
+                      </td>
                     </tr>
-                `;
-                tableBody.innerHTML += row;
-            });
-        })
-        .catch(error => console.error('Error al obtener los datos:', error));
-
-    // Funciones de los botones
-    function verRol(id) {
-        alert(`Ver detalles del rol con ID: ${id}`);
-    }
-
-    function editarRol(id) {
-        alert(`Editar rol con ID: ${id}`);
-        window.location.href = `editar_rol.php?id=${id}`;
-    }
-
-    function eliminarRol(id) {
-        if (confirm('¿Estás seguro de que deseas eliminar este rol?')) {
-            fetch(`eliminar_rol.php?id=${id}`, { method: 'DELETE' })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        alert('Rol eliminado correctamente.');
-                        location.reload();
-                    } else {
-                        alert('Error al eliminar el rol.');
-                    }
-                })
-                .catch(error => console.error('Error al eliminar el rol:', error));
-        }
-    }
-
-    // Cambiar el estado del rol
-    function cambiarEstado(id, estadoActual) {
-        const nuevoEstado = estadoActual == 1 ? 0 : 1; // Cambiar entre 1 (activo) y 0 (inactivo)
-
-        fetch(`cambiar_estado_rol.php?id=${id}&estado=${nuevoEstado}`, {
-            method: 'POST'
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert('Estado del rol actualizado.');
-                location.reload(); // Recargar la página para reflejar el cambio
-            } else {
-                alert('Error al cambiar el estado del rol.');
-            }
-        })
-        .catch(error => console.error('Error al cambiar el estado del rol:', error));
-    }
-</script>
-
-            </div>
-        </div>
-    </div>
- 
-                </div>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
         </div>
-      </div>
-   
-
-           
-                 
-                </div>
-              </div>
-            </div>
-            <div class="card-body px-0 pb-2">
-              <div class="table-responsive">
-                <table class="table align-items-center mb-0">
-
+      <footer class="footer py-4  ">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+              <div class="copyright text-center text-sm text-muted text-lg-start">
+                
                 © <script>
                   document.write(new Date().getFullYear())
                 </script>,
                creado por  
                 <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank"><i class="bi bi-person-badge"></i>Univ Luque</a>
              
-  
+              </div>
+            </div>
+           
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
   <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
       <i class="material-symbols-rounded py-2">settings</i>

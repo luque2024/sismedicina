@@ -9,8 +9,6 @@ include ('../app/config.php');
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
  
-   
-
   <title>
  Hospital Virtual
   </title>
@@ -90,10 +88,6 @@ include ('../app/config.php');
             </div>
               <div class="card-body">
 
-
-
-
-              
               <form id="loginForm" method="POST" action="controller_login.php">
                 <div class="input-group input-group-outline mb-3">
                  <label class="form-label">Email</label>
@@ -118,9 +112,6 @@ include ('../app/config.php');
                 </div>
                 </form>
 
-
-
-
               </div>
             </div>
           </div>
@@ -140,7 +131,6 @@ include ('../app/config.php');
               </div>
             </div>
             <div class="col-12 col-md-6">
-             
             </div>
           </div>
         </div>

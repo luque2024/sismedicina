@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  
+  .form-input, .form-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn-submit {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-submit:hover {
+    background-color: #218838;
+  }
+  
+  .btn-cancel {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-cancel:hover {
+    background-color: #c82333;
+  }
+  
+  .card-header-navy {
+    background-color: #001f3f; /* Azul marino */
+    color: white;
+}
+.btn-custom-edit {
+background-color: #003366;  /* Azul marino */
+color: white;
+border: none;
+}
+
+.btn-custom-edit:hover {
+background-color: #002244;  /* Un tono más oscuro de azul marino para el hover */
+color: white;
+}
+/* Cambiar el fondo de la tabla a blanco y el color de las letras a azul marino */
+.table {
+background-color: white;  /* Fondo blanco */
+color: #003366;  /* Color de texto azul marino */
+}
+
+/* Cambiar el color de las celdas del encabezado */
+.table th {
+background-color: #003366;  /* Fondo azul marino en el encabezado */
+color: white;  /* Texto blanco en el encabezado */
+}
+
+/* Cambiar el color de las celdas del cuerpo */
+.table td {
+
+}
+#formularioRol {
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+}
+/* Estilos para el formulario deslizante */
+.slide-form {
+position: fixed;
+top: -100%;
+left: 0;
+width: 100%;
+background: rgba(255, 255, 255, 0.95);
+z-index: 1050;
+transition: top 0.5s ease-in-out;
+padding: 20px 0;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slide-form.active {
+top: 0;
+}
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 20px;
+}
+
+button {
+padding: 10px 20px;
+background-color: #007BFF;
+color: #fff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+font-size: 14px;
+}
+
+button:hover {
+background-color: #0056b3;
+}
+
+.card {
+border: 1px solid #ddd;
+border-radius: 8px;
+padding: 20px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+font-size: 18px;
+margin-bottom: 20px;
+}
